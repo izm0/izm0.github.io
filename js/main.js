@@ -1,22 +1,19 @@
-var backgcol;
-var winheight;
-
 $(function(){
-    console.log("ready!");
-	winheight = window.innerHeight;
-	$('body').css("height",winheight);
-	if(localStorage && localStorage.getItem('backgcol')){
-		backgcol = JSON.parse(localStorage.getItem('backgcol'));
-		$('body').css("background-color",backgcol);
-	}
-	$('#inputcol').change(function(){
-		console.log('getting to here');
-		backgcol = this.value;
-		localStorage.setItem('backgcol',JSON.stringify(backgcol));
-		console.log(backgcol);
-		$('body').css("background-color",backgcol);
+	console.log("ready");
+	var myNav = $(".navtop");
+	var NavHeight = myNav.position().top;
+	$(window).scroll(function stick() {
+		if ($(this).scrollTop() > NavHeight){
+			console.log("Applying class");
+			myNav.addClass("sticky");
+		} else {
+			myNav.removeClass("sticky");
+			console.log("Removing class");
+		}
 		
-			
 	});
+	
+	
+	
+	
 });
-
