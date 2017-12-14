@@ -133,7 +133,7 @@ h2{
 	transform:translate(-50%,0);
 	left:50%;
 	text-align:center;
-	height:5%;
+	height:auto;
 	background-color:white;
 	border-style:solid;
 	box-sizing:border-box;
