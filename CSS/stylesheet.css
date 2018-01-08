@@ -23,6 +23,9 @@ h1{
 	font-size:3.5em;
 	text-align: center;
 	margin-bottom:35px;
+	text-shadow:1px 1px 3px white;
+	/*x-off y-off blur-rad color*/
+	
 	
 }
 h2{
@@ -122,24 +125,55 @@ h2{
 	width:85%;
 	box-sizing:border-box;
 	border-bottom-style:solid;
-	left:50%;
+	text-align:center;
+	margin:0 7.5%;
 	
 }
-.footer{
+#footer{
 	position:fixed;
 	bottom:0;
 	width:90%;
-	
+	padding-bottom:5px;
 	transform:translate(-50%,0);
 	left:50%;
 	text-align:center;
-	height:auto;
 	background-color:white;
 	border-style:solid;
 	box-sizing:border-box;
 }
-.ftbutton{
+.collapse{
+	height:16px;
+}
+.rotate{
+	transform: rotate(180deg);
+}
+#collarrow{
+	position:relative;
+	display:block;
+	left:95%;
+}
 
+.picker{
+	color: white;
+    padding: 4px 16px;
+    border-radius: 10px;
+    margin-left: 8px;
+    margin-right: 8px;   
+	position:relative;
+	transform:translate(-50%,0);
+	
+}
+#redbutt{
+	background-color:red;
+}
+#orangebutt{
+	background-color:#F7852E;
+}
+#bluebutt{
+	background-color:#0a84b3;
+}
+#purplebutt{
+	background-color:#664069;	
 }
 @media only screen and (max-width: 500px){
 	.navtop > a{
