@@ -4,16 +4,71 @@ $(function(){
 	var NavHeight = myNav.position().top;
 	var collapsed = false;
 	var bStorage = false;
+	var pickercol;
 	var pTotal = 0;
+	if($("#canvas").length != 0){ //if canvas exists
+		var c = $("#canvas")[0];
+		//console.log(c);
+	
+		var ctx = c.getContext("2d");
+		ctx.canvas.width = c.clientWidth;
+		ctx.canvas.height = c.clientHeight;
+		
+		$(".canimg").draggable({
+			revert:"invalid",
+			helper:'clone',
+			start: handleDragEvent
+	
+		});
+		
+		$("#canvas").droppable({
+			drop: handleDropEvent
+		});
+		
+		var lastDragX;
+		var lastDragY;
+		
+		function handleDragEvent(event, ui){
+
+			var mouseStartX = event.clientX;
+			var mouseStartY = event.clientY;
+			
+			var targetStartX = ui.offset.left;
+			var targetStartY = ui.offset.top;
+			
+		
+			lastDragX = mouseStartX-targetStartX;
+			lastDragY = mouseStartY-targetStartY;
+		}
+		
+		function handleDropEvent(event, ui){
+			var draggable = ui.draggable[0];
+
+			var x = event.clientX - $("#canvas").offset().left - lastDragX;
+			var y = event.clientY - $("#canvas").offset().top - lastDragY;
+			console.log("Pos",x,y);
+			ctx.drawImage(draggable,x,y);
+		}
+		$("#save").click(function save(){
+			var dataURL = c.toDataURL("image/png");
+			console.log(dataURL);
+			$(this).href = dataURL;
+		});
+	}
+		
 	if (typeof(Storage) !== "undefined") { //checking for local storage
 		bStorage = true;
-		var pickercol = localStorage.getItem("bancolour");
+		pickercol = localStorage.getItem("bancolour");
 		$(".colchange").css("background-color",pickercol);
 	} else {
 		$(".colchange").css("background-color","#0a84b3");
 	}
+	updateImage($(".colchange").css("background-color"));
 	$(".clicked").css("background-color","#000000");
-	
+	$("#backsel img").click(function(){
+		console.log($(this));
+		ctx.drawImage($(this)[0],0,0,ctx.canvas.width,ctx.canvas.height);
+	});
 	$(".buybutton").click(function cartAdd(){
 		var item = this.closest(".item");
 		var itemname = $(item).data("itemname");
@@ -49,7 +104,7 @@ $(function(){
 		
 	});
 
-	
+
 	
 	$(window).scroll(function stick() {
 		if ($(this).scrollTop() > NavHeight){
@@ -74,6 +129,7 @@ $(function(){
 			//if local storage is not supported
 		}
 		$(".clicked").css("background-color","#000000");
+		updateImage($(".colchange").css("background-color"));
 	});
 	
 	$("#collarrow").click(function(){
@@ -90,6 +146,22 @@ $(function(){
 		}
 	});
 	
-	
+	function updateImage(colActive){
+		$(".turtle").addClass("hidden");
+		
+		if(colActive=="rgb(255, 0, 0)"){ //unhiding images based on color
+			$("#col1").removeClass("hidden");			
+		}
+		else if (colActive=="rgb(247, 133, 46)"){
+			$("#col2").removeClass("hidden");
+		}
+		else if (colActive=="rgb(10, 132, 179)"){
+			$("#col3").removeClass("hidden");
+		}
+		else if (colActive=="rgb(102, 64, 105)"){
+			$("#col4").removeClass("hidden");
+		}
+	};
 	
 });
+
