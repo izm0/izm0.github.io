@@ -4,6 +4,7 @@ $(function(){
 	var NavHeight = myNav.position().top;
 	var collapsed = false;
 	var bStorage = false;
+	var bMenu = false;
 	var pickercol;
 	var pTotal = 0;
 	if($("#canvas").length != 0){ //if canvas exists
@@ -56,7 +57,19 @@ $(function(){
 			console.log($(this));
 		});
 	}
-		
+	$(".colchange").css("background-color","#0a84b3");	
+	
+	$("#navbutt").click(function(){
+		if(bMenu==false){
+			console.log($(this));
+			bMenu = true;
+			$(".headermob .navtop").css("display","block")
+		}
+		else{
+			bMenu = false;
+				$(".headermob .navtop").css("display","none")
+		}
+	});
 	if (typeof(Storage) !== "undefined") { //checking for local storage
 		bStorage = true;
 		pickercol = localStorage.getItem("bancolour");
