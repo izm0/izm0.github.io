@@ -51,8 +51,9 @@ $(function(){
 		}
 		$("#save").click(function save(){
 			var dataURL = c.toDataURL("image/png");
-			console.log(dataURL);
+			
 			$(this).href = dataURL;
+			console.log($(this));
 		});
 	}
 		
