@@ -8,13 +8,14 @@ body{
 	margin:0;
 	height:100%;
 	background-color:#114704;
+	min-width:540px;
 }
 #backbanner{
 	position:fixed;
 	width:100%;
 	height:128px;
 	z-index:-99;
-	background-color:#0a84b3;
+
 	transform:translate(0,-50%);
 	top:50%;
 }
@@ -52,18 +53,21 @@ h2{
 	width:100%;
 	margin-bottom:5px;
 }
+.navtopmob{
+	display:none;
+}
 .navtop > a {
 	display: inline-block;
-    background-color:#0a84b3;
     text-decoration: none;
-    color: white;
-    padding: 4px 16px;
-    border-radius: 16px;
-    margin-left: 8px;
-    margin-right: 8px;    
+	margin:0 8px;
     font-size: 1.5em;
-    font-family: sans-serif;
-    font-weight: bold;
+}
+a{
+	color:white;
+	font-family: sans-serif;
+    font-weight: bold;	
+	border-radius: 16px;
+	padding: 4px 16px;
 }
 #vid{
 	left:50%;
@@ -77,6 +81,78 @@ h2{
 	position:relative;
 	display:inline-block;
 	width:100%;
+	
+}
+#shopleft{
+	position:relative;
+	display:inline-block;
+	width:69%;
+	margin:0;
+	border-style:solid;
+	border-color:white;
+	border-collapse:collapse;
+	box-sizing:border-box;
+	padding-bottom:10px;
+}
+.item > img {
+	padding-top:10px;
+}
+.item{
+	box-sizing:border-box;
+	border-bottom-style:solid;
+	border-bottom-color:white;
+	border-collapse:collapse;
+	position:relative;
+	width:100%;
+	padding: 0 5%;
+	margin:0;
+	background-color:darkgreen;
+	color:white;
+}
+.item >a{
+	/*need to fix padding to allow the button to be inside the box 
+	also need to change item background colour and tile the background on the actual main area*/
+	
+	position:absolute;
+	right:10%;
+	top:10%;
+}
+#cart{
+	display:inline-block;
+	box-sizing:border-box;
+	position:relative;
+	width:29%;
+	margin:0;
+	margin-left:2%;
+	vertical-align:top;
+	padding-bottom:10px;
+	padding-left:10px;
+	border-style:solid;
+	border-color:white;
+	color:white;
+	background-color:darkgreen;
+}
+#cart >a{
+	position:absolute;
+	right:10%;
+	bottom:10%;
+}
+#itemlist{
+	width:80%;
+	padding: 0 5%;
+	left:10%;
+	position:relative;
+}
+#itemlist tr:nth-child(even){
+	background-color:#114704;
+}
+
+table{
+	right:50%;
+}
+th,td{
+	padding: 15px;
+
 	
 }
 #blogarea{
@@ -165,21 +241,52 @@ h2{
 }
 #redbutt{
 	background-color:red;
+	cursor: pointer;
 }
 #orangebutt{
 	background-color:#F7852E;
+	cursor: pointer;
 }
 #bluebutt{
 	background-color:#0a84b3;
+	cursor: pointer;
 }
 #purplebutt{
 	background-color:#664069;	
+	cursor: pointer;
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width:830px){
+	.item>a{
+		display:block;
+		position:relative;
+		bottom:initial;
+		right:initial;
+		border-radius: 16px 16px 0 0;
+		text-align: center;
+	}
+	.item>img{
+		display:block;
+	}
+	#shopleft{
+		width:100%;
+		
+	}
+	#cart{
+		width:100%;
+		margin-left:0;
+	}
+}
+@media only screen and (max-width: 720px){
 	.navtop > a{
 		padding: 0 5px;
 		margin:0 4px;
 
+	}
+	.navtop{
+		display:none;
+	}
+	.navtopmob{
+		display:block;
 	}
 	.leftimg{
 		visibility:hidden;
