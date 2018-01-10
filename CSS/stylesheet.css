@@ -356,6 +356,8 @@ th,td{
 	.navtop{
 		display:none;
 		width:100%;
+		position:absolute;
+		z-index:8;
 	}
 	.navtop >a{
 		display:block;
@@ -370,6 +372,12 @@ th,td{
 		display:block;
 		max-width:720px;
 		min-width:720px;
+		position:fixed;
+		z-index:7;
+		background-color:"#114704";
+	}
+	#main{
+		margin-top:150px;
 	}
 	#navbutt{
 		width:125px;

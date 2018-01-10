@@ -121,12 +121,15 @@ $(function(){
 
 	
 	$(window).scroll(function stick() {
-		if ($(this).scrollTop() > NavHeight){
-			console.log("Applying class");
-			myNav.addClass("sticky");
-		} else {
-			myNav.removeClass("sticky");
-			console.log("Removing class");
+		
+		if($(this)[0].innerWidth >= 721){
+			if ($(this).scrollTop() > NavHeight){
+				console.log("Applying class");
+				myNav.addClass("sticky");
+			} else {
+				myNav.removeClass("sticky");
+				console.log("Removing class");
+			}
 		}
 		
 	});
