@@ -374,7 +374,7 @@ th,td{
 		min-width:720px;
 		position:fixed;
 		z-index:7;
-		background-color:"#114704";
+		background-color:#114704;
 	}
 	#main{
 		margin-top:150px;
