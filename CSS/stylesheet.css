@@ -69,6 +69,7 @@ a{
 	border-radius: 16px;
 	padding: 4px 16px;
 	text-decoration: none;
+	cursor:pointer;
 }
 #vid{
 	left:50%;
@@ -363,6 +364,13 @@ th,td{
 		
 		
 	}
+	.collapse{
+		height:60px;
+	}
+	#footer{
+		width:100%;
+		margin:0;
+	}
 	.navtop{
 		display:none;
 		width:100%;
@@ -403,7 +411,7 @@ th,td{
 		background-size:100%;
 		display:inline-block;
 		vertical-align:top;
-		
+		cursor:pointer;
 	}
 	.headermob > h1{
 		width:595px;
