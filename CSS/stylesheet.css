@@ -234,20 +234,7 @@ th,td{
 }
 
 
-.leftimg{
-	z-index:0;
-	display:none;
-	visibility:hidden;
 
-}
-
-.rightimg{
-	z-index:0;
-	position:absolute;
-	right:0;
-	display:none;
-	visibility:hidden;
-}
 .blogtitle{
 	
 	width:100%;
