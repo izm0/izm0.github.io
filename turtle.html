@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>TMNT Assignment site - Sticker</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="CSS\stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
 		<link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>		
 	</head>
 	<body>
-	<div id="backbanner"class="colchange">
-	</div>
-	<div class="header">
-		<h1>Teenage Mutant Ninja Turtles</h1>
-		<div class="navtop">
-			<a href="index.html"class="colchange">Home/Blog</a>
-			<a href="merch.html"class="colchange">Merchandise</a>
-			<a href="turtle.html"class="colchange clicked">Sticker Scene</a>
-			<a href="#about"class="colchange">Demo</a>		
+		<div id="backbanner" class="colchange">
 		</div>
-	</div>
-	<div class="headermob">
-		<div id="navbutt">
-		</div><!--
-		--><h1>Teenage Mutant Ninja Turtles</h1>
-		<div class="navtop">
-			<a href="index.html"class="colchange">Home/Blog</a>
-			<a href="merch.html"class="colchange">Merchandise</a>
-			<a href="turtle.html"class="colchange clicked">Sticker Scene</a>
-			<a href="#about"class="colchange">Demo</a>		
-		</div>
-	</div>
-	<div id="main">
-		<div id="selPane">
-			
-			<img class="hidden canimg turtle" id="col1" src="Assets\colchangeRed.png">
-			<img class="hidden canimg turtle" id="col2" src="Assets\colchangeOrange.png">
-			<img class="hidden canimg turtle" id="col3" src="Assets\colchangeBlue.png">
-			<img class="hidden canimg turtle" id="col4" src="Assets\colchangePurp.png">
-			<img class="canimg" src="Assets\can_Sais.png">
-			<img class="canimg" src="Assets\can_Nunchacku.png">
-			<img class="canimg" src="Assets\can_Ninjaken.png">
-			<img class="canimg" src="Assets\can_Bo.png">
-			<img class="canimg" src="Assets\shredder.png">
-			<img class="canimg" src="Assets\allchars.png">
-		</div><!--
-	--><div id="canPane">
-			<canvas id="canvas">
-			
-			</canvas>
-			<div id="backsel">
-				<img id="back1"src="Assets\tmnt_back1.jpg">
-				<img id="back2"src="Assets\tmnt_back2.jpg">
-				<img id="back3"src="Assets\tmnt_back3.jpg">
+		<div class="header">
+			<h1>Teenage Mutant Ninja Turtles</h1>
+			<div class="navtop">
+				<a href="index.html" class="colchange">Home/Blog</a>
+				<a href="merch.html" class="colchange">Merchandise</a>
+				<a href="turtle.html" class="colchange clicked">Sticker Scene</a>
+				<a href="demo.html" class="colchange">Demo</a>		
 			</div>
 		</div>
-	</div>
-	<div id="footer">
-		<img id="collarrow" src="Assets\collarrow2.png">
-		<div id="footerleft">			
-			<p>Choose your bandana style!</p>
-			<a id="redbutt"class="picker">Red!</a>
-			<a id="orangebutt"class="picker">Orange!</a>
-			<a id="bluebutt"class="picker">Blue!</a>
-			<a id="purplebutt"class="picker">Purple!</a>
+		<div class="headermob">
+			<div id="navbutt">
+			</div><!--
+			--><h1>Teenage Mutant Ninja Turtles</h1>
+			<div class="navtop">
+				<a href="index.html" class="colchange">Home/Blog</a>
+				<a href="merch.html" class="colchange">Merchandise</a>
+				<a href="turtle.html" class="colchange clicked">Sticker Scene</a>
+				<a href="demo.html" class="colchange">Demo</a>		
+			</div>
 		</div>
-		
-		<div id="canvasOpt">
-			<p>Drag and drop stickers onto the canvas to create your scene!</P>
-			<p>To save your creation, click the save button!</p>
-			<a id="save"class="colchange">Save</a>
+		<div id="main">
+			<div id="selPane">
+				
+				<img class="hidden canimg turtle" id="col1" src="Assets/colchangeRed.png" alt="RedTurtle">
+				<img class="hidden canimg turtle" id="col2" src="Assets/colchangeOrange.png" alt="OrangeTurtle">
+				<img class="hidden canimg turtle" id="col3" src="Assets/colchangeBlue.png" alt="BlueTurtle">
+				<img class="hidden canimg turtle" id="col4" src="Assets/colchangePurp.png" alt="PurpTle">
+				<img class="canimg" src="Assets/can_Sais.png" alt="Sais-draggable">
+				<img class="canimg" src="Assets/can_Nunchacku.png" alt="Nunchacku-draggable">
+				<img class="canimg" src="Assets/can_Ninjaken.png" alt="Ninjaken-draggable">
+				<img class="canimg" src="Assets/can_Bo.png" alt="Bo-Staff-draggable">
+				<img class="canimg" src="Assets/shredder.png" alt="Shredder-draggable">
+				<img class="canimg" src="Assets/allchars.png" alt="icon-turtle-draggable">
+			</div><!--
+		--><div id="canPane">
+				<canvas id="canvas">
+				
+				</canvas>
+				<div id="backsel">
+					<img id="back1" src="Assets/tmnt_back1.jpg" alt="backg1">
+					<img id="back2" src="Assets/tmnt_back2.jpg" alt="backg2">
+					<img id="back3" src="Assets/tmnt_back3.jpg" alt="backg3">
+				</div>
+			</div>
 		</div>
-		
-	</div>
+		<div id="footer">
+			<img id="collarrow" src="Assets/collarrow.png" alt="arrow">
+			<div id="footerleft">			
+				<p>Choose your bandana style!</p>
+				<a id="redbutt" class="picker">Red!</a>
+				<a id="orangebutt" class="picker">Orange!</a>
+				<a id="bluebutt" class="picker">Blue!</a>
+				<a id="purplebutt" class="picker">Purple!</a>
+			</div>
+			
+			<div id="canvasOpt">
+				<p>Drag and drop stickers onto the canvas to create your scene!</P>
+				<p>To save your creation, click the save button!</p>
+				<a id="save" class="colchange">Save</a>
+			</div>
+			
+		</div>
 	</body>
-	<script src="JS\main.js"></script>
+	<script src="JS/main.js"></script>
 </html>
