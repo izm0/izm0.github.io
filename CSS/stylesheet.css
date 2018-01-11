@@ -213,7 +213,7 @@ th,td{
 #backsel > img{
 	width:256px;
 	height:auto;
-	
+	cursor:pointer;
 }
 #blogarea{
 	width:90%;
@@ -233,8 +233,9 @@ th,td{
 	background-color:white;
 }
 
-
-
+.draggable{
+	cursor:pointer;
+}
 .blogtitle{
 	
 	width:100%;
@@ -288,6 +289,7 @@ th,td{
 	display:block;
 	left:95%;
 	width:16px;
+	cursor:pointer;
 }
 
 .picker{

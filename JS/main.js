@@ -1,13 +1,13 @@
-$(function(){
-	console.log("ready");
+$(function(){ //ensures document is ready before scripts are ran
+	console.log("ready"); 
 	var myNav = $(".navtop");
-	var NavHeight = myNav.position().top;
-	var collapsed = false;
-	var bStorage = false;
-	var bMenu = false;
-	var pickercol;
+	var NavHeight = myNav.position().top; //used for applying sticky to navbar
+	var collapsed = false; //used for button to collapse footer
+	var bStorage = false;  //whether local storage is supported - used to apply a default
+	var bMenu = false; // dropdown menu 
+	var pickercol; //colour selected from footer
 	var pTotal = 0;
-	if($("#canvas").length != 0){ //if canvas exists
+	if($("#canvas").length != 0){ //if canvas exists on page (turtle.html)
 		var c = $("#canvas")[0];
 		//console.log(c);
 	
@@ -18,48 +18,44 @@ $(function(){
 		$(".canimg").draggable({
 			revert:"invalid",
 			helper:'clone',
-			start: handleDragEvent
+			start: handleDragEvent //on start drag equivalent
 	
 		});
 		
 		$("#canvas").droppable({
-			drop: handleDropEvent
+			drop: handleDropEvent 
 		});
 		
 		var lastDragX;
 		var lastDragY;
 		
-		function handleDragEvent(event, ui){
+		function handleDragEvent(event, ui){ //when a drag event is called on the draggable images in turtle.html
 
-			var mouseStartX = event.clientX;
+			var mouseStartX = event.clientX; //mouse location in window
 			var mouseStartY = event.clientY;
 			
-			var targetStartX = ui.offset.left;
+			var targetStartX = ui.offset.left; //offset of image in window
 			var targetStartY = ui.offset.top;
 			
 		
-			lastDragX = mouseStartX-targetStartX;
+			lastDragX = mouseStartX-targetStartX; //lastDrag is the relative position of the mouse on the image
 			lastDragY = mouseStartY-targetStartY;
 		}
 		
-		function handleDropEvent(event, ui){
+		function handleDropEvent(event, ui){ //when a draggable image is dropped onto the canvas
 			var draggable = ui.draggable[0];
-
-			var x = event.clientX - $("#canvas").offset().left - lastDragX;
+			//converting to the canvas local space
+			
+			var x = event.clientX - $("#canvas").offset().left - lastDragX; 
 			var y = event.clientY - $("#canvas").offset().top - lastDragY;
 			console.log("Pos",x,y);
-			ctx.drawImage(draggable,x,y);
+			ctx.drawImage(draggable,x,y); //draws the image from the drop onto the canvas at that position
 		}
-		$("#save").click(function save(){
-			var dataURL = c.toDataURL("image/png");
-			
-			$(this).href = dataURL;
-			console.log($(this));
-		});
+
 	}
-	$(".colchange").css("background-color","#0a84b3");	
+	$(".colchange").css("background-color","#0a84b3");	//updates the background colour of the colchange class
 	
-	$("#navbutt").click(function(){
+	$("#navbutt").click(function(){ //click handling for mobile
 		if(bMenu==false){
 			console.log($(this));
 			bMenu = true;
@@ -83,7 +79,7 @@ $(function(){
 		console.log($(this));
 		ctx.drawImage($(this)[0],0,0,ctx.canvas.width,ctx.canvas.height);
 	});
-	$(".buybutton").click(function cartAdd(){
+	$(".buybutton").click(function cartAdd(){ //adds the items data to the cart
 		var item = this.closest(".item");
 		var itemname = $(item).data("itemname");
 		//console.log(itemname);
@@ -93,7 +89,8 @@ $(function(){
 		var cartList = $("#itemlist > table > tbody > tr .name").filter(function(index){
 			return $(this).text() == itemname
 		});
-		if (cartList.length >0){
+		if (cartList.length >0){ 
+			//this increases the quantity in the cart and adds the price total for each item
 			
 			var qty = $(cartList).parent().find(".quantity").text();
 			qty = parseInt(qty)+ 1;
@@ -105,12 +102,13 @@ $(function(){
 		}
 		else{
 			$("#itemlist > table > tbody").append("<tr><td class='name'>"+itemname+"</td><td class='price'>"+itemprice+"</td><td class='quantity'>1</td></tr>");	
+			//appends a table row if the item has not been added before
 		}
 		
 		var priceList = $("#itemlist > table > tbody > tr .price");
 		pTotal =0;
 		for(var i=0;i<priceList.length;i++){
-			//Yu mu gway gway vi de sao
+			//this adds the price total for each item to a grand total at the bottom of the cart
 			pTotal += parseInt($(priceList[i]).text());
 		}
 		$("#total").text("Total cost:"+parseInt(pTotal));
@@ -121,7 +119,8 @@ $(function(){
 
 	
 	$(window).scroll(function stick() {
-		
+		//this is called when the window is scrolled and checks the position of the navbar height
+		//vs the top of the screen
 		if($(this)[0].innerWidth >= 721){
 			if ($(this).scrollTop() > NavHeight){
 				console.log("Applying class");
@@ -135,12 +134,14 @@ $(function(){
 	});
 
 	$(".picker").click(function(){
+		//when the colour picker is clicked 
 		console.log("getting to here");
 		pickercol = $(this).css("background-color");
 		console.log(pickercol+" = colour selected");
 		$(".colchange").css("background-color",pickercol);
 		if (bStorage) {
 			localStorage.setItem("bancolour",pickercol);
+			//sets local storage for banner colour and style
 		} 
 		else {
 			//if local storage is not supported
@@ -151,7 +152,7 @@ $(function(){
 	
 	$("#collarrow").click(function(){
 		console.log("arrow clicked");
-		if(!collapsed){
+		if(!collapsed){ //global variable used to keep track of footer state
 			$(this).addClass("rotate");
 			$("#footer").addClass("collapse");
 			collapsed = true;
@@ -163,7 +164,8 @@ $(function(){
 		}
 	});
 	
-	function updateImage(colActive){
+	function updateImage(colActive){ 
+		//updates the image in turtle.html with the correct bandana colour
 		$(".turtle").addClass("hidden");
 		
 		if(colActive=="rgb(255, 0, 0)"){ //unhiding images based on color
