@@ -1,430 +1,170 @@
 html{
 	height:100%;
 }
-
-body{
-	position:relative;
-	padding:0;
-	margin:0;
-	height:100%;
-	background-color:#114704;
-	min-width:720px;
-}
-#backbanner{
-	position:fixed;
-	width:100%;
-	height:128px;
-	z-index:-99;
-
-	transform:translate(0,-50%);
-	top:50%;
-}
-h1{
-	font-family: 'Ceviche One', cursive;
-	font-size:3.5em;
-	text-align: center;
-	margin-bottom:35px;
-	text-shadow:1px 1px 3px white;
-	/*x-off y-off blur-rad color*/
-	
-	
-}
-h2{
-	font-family: 'Ceviche One', cursive;
-	font-size:3em;
-}
 .header{
-	
-	width:100%;
-	height:auto;
-	display:block;
-	/* changing display to inlineblock fixes jumping thing */
-	background-color:#114704;
-}
-.sticky{
-	position:fixed;
-	top:0;
-	margin-top:5px;
-	z-index:2;
-}
-.navtop{
+	background-color:#36A1FF;
 	text-align:center;
-	height:auto;
-	width:100%;
-	margin-bottom:5px;
+
+	top:0px;
 }
-.headermob{
-	display:none;
-}
-.navtop > a {
-	display: inline-block;
-    
-	margin:0 8px;
-    font-size: 1.5em;
-}
-a{
+body{
+	background-color:#0A61AD;
 	color:white;
 	font-family: sans-serif;
     font-weight: bold;	
-	border-radius: 16px;
-	padding: 4px 16px;
+	
+	padding: 4px 10px;
 	text-decoration: none;
-	cursor:pointer;
 }
-#vid{
-	left:50%;
-	/*so the video sorta jumps when the header becomes sticky? */
-	position:relative;
-	transform:translate(-50%,-50%);
-	z-index:1;
-	margin-top:300px;
-	
-
-}
-#main{
-	position:relative;
-	display:inline-block;
-	width:100%;	
-	height:100%;
-	margin-bottom:130px;
-	margin-top:25px;
-}
-#shopleft{
-	position:relative;
-	display:inline-block;
-	width:69%;
-	margin-top:10px;
-	border-style:solid;
+.blogarea{
+	background-color:#FAA41B;
 	border-color:white;
 	
-	border-collapse:collapse;
-	box-sizing:border-box;
-}
-.item > img {
-	padding-top:10px;
-}
-.item{
-	box-sizing:border-box;
-
-	border-collapse:collapse;
-	border-bottom-style:solid;
-	border-bottom-color:white;
-	position:relative;
-	width:100%;
-	padding: 0 5%;
-	margin:0;
-	background-color:darkgreen;
-	color:white;
-}
-.item >a{
-	/*need to fix padding to allow the button to be inside the box 
-	also need to change item background colour and tile the background on the actual main area*/
-	
-	position:absolute;
-	right:10%;
-	top:10%;
-}
-#cart{
-	display:inline-block;
-	box-sizing:border-box;
-	position:relative;
-	width:29%;
-	margin:0;
-	margin-top:10px;
-	margin-left:2%;
-	vertical-align:top;
-	padding-bottom:10px;
-	padding-left:10px;
 	border-style:solid;
-	border-color:white;
-	color:white;
-	background-color:darkgreen;
+	color:black;
+	padding-left:5px;
+	padding-top:5px;
 }
-#cart >a{
-	position:absolute;
-	right:10%;
-	bottom:10%;
-}
-#itemlist{
-	width:80%;
-	padding: 0 5%;
-	left:10%;
-	position:relative;
-	min-width:160px;
-}
-#itemlist tr:nth-child(even){
-	background-color:#114704;
-}
-
-table{
-	right:50%;
-}
-th,td{
-	padding: 15px;
-	
-	
-}
-#selPane{
-	display:inline-block;
-	vertical-align:top;
-	border-style:solid;
-	border-color:white;
-	box-sizing:border-box;
-	border-radius:16px;
-	padding:10px;
-	width:20%;
-}
-#selPane >img{
-	max-width:48%;
-	height:auto;
-}
-#canPane{
-	vertical-align:top;
-	display:inline-block;	
-	width:75%;
-	height:100%;
-	margin:0 2.5%;
-}
-#canvas{
-	
-	width:100%;
-	height:90%;
-	border-style:solid;
-	border-color:white;
-	box-sizing:border-box;
-	border-radius:16px;
-	
-	
-	background-color:white;
-}
-#backsel{
-	display:inline-block;
-
-
-	width:95%;
-	border-style:solid;
-	border-color:white;
-	box-sizing:border-box;
-	border-radius:16px;
-	margin:0 2.5%;
+.navtop{
 	text-align:center;
-	padding-bottom:5px;
-}
-#backsel > img{
-	width:256px;
-	height:auto;
-	cursor:pointer;
-}
-#blogarea{
-	width:90%;
-	
-	position:absolute;
-	transform:translate(-50%,0);
-	left:50%;
-	
-	padding:5px;
-	padding-left:30px;
-	
-	margin-left:0;
-	margin-right:5px;
-	
-	border-style:solid;
-	box-sizing:border-box;
-	background-color:white;
-}
-
-.draggable{
-	cursor:pointer;
-}
-.blogtitle{
 	
 	width:100%;
+	margin-bottom:5px;
+	background-color:#FAA41B;
+}
+.sticky{
+	display:inline-block;
+	position:fixed;
+	top:0;
+	left:0%;
+	margin-top:0px;
+	margin-bottom:5px;
+	width:100%;
+	text-align:center;
+	z-index:2;
+}
+.b{
+	position:relative;	
+}
+#accuracy{
+	text-align: center;
+}
+
+
+#IDwindow{
+	position:relative;
+	margin-top:20px;
+	left:10%;
+	width:80%;
+	height:400px;
+	border-style:solid;
+	border-bottom-width:10px;
+	box-sizing:border-box;
+}
+#leftPane{
+	position:absolute;
+	top:0;
+	left:0;
+	height:394px;
+	width:50%;
+	
+	box-sizing:border-box;
+	border-style:solid;
+	border-right-width:5px;
+	border-bottom-width:2px;
+	border-right-color:black;
+	
+	background-color:#1B92FA;
+
+	
+}
+#result{
+	position:relative;	
+	text-align: center;
+
+}
+#rightPane{
+	position:absolute;
+	padding-top:10px;
+	top:0%;
+	left:50%;
+	height:394px;
+	width:50%;
+	box-sizing:border-box;
+	border-style:solid;
+	border-left-width:5px;
+	border-bottom-width:2px;
+	border-left-color:black;	
+	background-color:#36A1FF;
+	
+}
+
+.preview{
+	width: 250px;
+	height: 250px;
+	border: 1px solid black;
+	margin:auto;
+		margin-bottom:10px;
+	background-color: white;
+   
+   
+}
+.preview img{
+	display:none;
+
+}
+.infoContainers{
+	position:relative;
+	margin-top:20px;
+	left:10%;
+	width:80%;
+	height:600px;
+	border-style:solid;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	background-color:#36A1FF;
+}
+.guideContainer{
+	position:absolute;
+	width:40%;
+	left:5%;
+	padding:50px;
+	margin-right:5%;
+}
+.egImg{
+	position: relative;
+	height:70%;
+	width:35%;
+	
+	
 }
 .blogimg{
+	position:relative;
+	margin-left:5px;
+}
+.statContainer{
+	position:absolute;
 	width:75%;
-	height:auto;
-	margin:0 12.5%;
+	left:0%;
+	height:90%;
+	padding:50px;
+	margin-left:5%;
 }
-.blogpost{
-	width:85%;
-	box-sizing:border-box;
-	border-bottom-style:solid;
+.centered{
 	text-align:center;
-	margin:0 7.5%;
-	
 }
-#footer{
+.footer{
 	position:fixed;
+	color:black;
+	background-color:#FAA41B;
 	bottom:0;
 	width:90%;
+	height:auto;
 	padding-bottom:5px;
 	transform:translate(-50%,0);
 	left:50%;
 	text-align:center;
-	background-color:white;
+
 	border-style:solid;
 	box-sizing:border-box;
-}
-
-#footerleft{
-	display:inline-block;
-	position:relative;
-	width:48%;
-}
-#canvasOpt{
-	display:inline-block;
-	width:48%;
-	
-	vertical-align:top;
-	padding-bottom:10px;
-}
-.collapse{
-	height:16px;
-}
-.rotate{
-	transform: rotate(180deg);
-}
-#collarrow{
-	position:relative;
-	display:block;
-	left:95%;
-	width:16px;
-	cursor:pointer;
-}
-
-.picker{
-	color: white;
-    padding: 4px 16px;
-    border-radius: 10px;
-    margin-left: 8px;
-    margin-right: 8px;   
-	position:relative;
-	transform:translate(-50%,0);
-	
-}
-.hidden{
-	display:none;
-}
-.activecol{
-	display:inline-block;
-}
-#redbutt{
-	background-color:#FF0000;
-	cursor: pointer;
-}
-#orangebutt{
-	background-color:#F7852E;
-	cursor: pointer;
-}
-#bluebutt{
-	background-color:#0a84b3;
-	cursor: pointer;
-}
-#purplebutt{
-	background-color:#664069;	
-	cursor: pointer;
-}
-@media only screen and (max-width:830px){
-	.item>a{
-		display:block;
-		position:relative;
-		bottom:initial;
-		right:initial;
-		border-radius: 16px 16px 0 0;
-		text-align: center;
-	}
-	.item>img{
-		display:block;
-	}
-	#shopleft{
-		width:100%;
-		
-	}
-	#cart{
-		width:100%;
-		margin-left:0;
-	}
-}
-@media only screen and (max-width: 720px){
-	#collarrow{
-		
-		width:80px;
-		left:85%;
-		
-		
-	}
-	.collapse{
-		height:60px;
-	}
-	#footer{
-		width:100%;
-		margin:0;
-	}
-	.navtop{
-		display:none;
-		width:100%;
-		position:absolute;
-		z-index:8;
-	}
-	.navtop >a{
-		display:block;
-		width:100%;
-		border-radius:0;
-		margin:0;
-	}
-	.header{
-		display:none;
-	}
-	.headermob{
-		display:block;
-		max-width:720px;
-		min-width:720px;
-		position:fixed;
-		z-index:7;
-		background-color:#114704;
-	}
-	#main{
-		margin-top:150px;
-	}
-	#navbutt{
-		width:105px;
-		height:105px;
-		margin:10px;
-		border-style:solid;
-		border-radius:16px;
-		border-width:2px;
-		border-color:white;
-		box-sizing:border-box;
-		background-color:black;
-		background-image: url("../Assets/menu.png");
-		background-size:100%;
-		display:inline-block;
-		vertical-align:top;
-		cursor:pointer;
-	}
-	.headermob > h1{
-		width:595px;
-		margin:0;
-		display:inline-block;
-		vertical-align:top;
-	}
-	.leftimg{
-		visibility:hidden;
-	}
-	.rightimg{
-		visibility:hidden;
-	}
-	#vid{
-		width:100%;
-		
-	}
-	#blogarea{
-		width:100%;
-		margin:0px;
-		padding:0px;
-	}
-	.blogimg{
-		width:100%;
-		margin:0px;
-	}
 }
